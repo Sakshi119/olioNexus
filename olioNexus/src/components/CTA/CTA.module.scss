@@ -1,0 +1,56 @@
+@import "../../assets/styles/mixins";
+@import "../../assets/styles/variables";
+
+.cta {
+  background: $dark-gray;
+  color: $white;
+  padding: $section-padding-y $section-padding-x;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  flex-wrap: wrap;
+  BORDER-BOTTOM: 1PX SOLID #333333;
+
+  @include tablet {
+    padding: 60px $section-padding-mob;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+// ── Left
+.left {
+  flex: 1;
+}
+
+.heading {
+  font-family: $font-display;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 56px;
+  margin-bottom: 32px;
+}
+
+.sub {
+  font-family: $font-body;
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.7;
+  max-width: 420px;
+  margin-bottom: 32px;
+}
+
+.connectBtn {
+  @include btn-base;
+  background: $green;
+  color: $white;
+  text-decoration: none;
+
+  &:hover {
+    background: darken($green, 8%);
+    color: $black;
+    transform: translateY(-2px);
+  }
+}
+

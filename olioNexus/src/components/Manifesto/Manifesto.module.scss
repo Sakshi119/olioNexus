@@ -1,0 +1,38 @@
+@import "../../assets/styles/mixins";
+@import "../../assets/styles/variables";
+
+.manifesto {
+  @include section-pad;
+  padding-top: 0 !important ;
+  padding-bottom: 0 !important;
+  background: $white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+.header {
+  padding: 120px 0;
+  border: 1px solid #ccc;
+  border-top: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.heading {
+  font-family: $font-display;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 53px;
+  color: $dark-gray;
+  max-width: 760px;
+  margin-top: 16px;
+
+}
+
+.green {
+  color: $green;
+}

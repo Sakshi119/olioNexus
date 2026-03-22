@@ -1,0 +1,97 @@
+@import "../../assets/styles/mixins";
+@import "../../assets/styles/variables";
+
+.industries {
+  @include section-pad;
+  background: $white;
+  padding-top: 0 !important ;
+  padding-bottom: 0 !important;
+}
+
+.headerRow {
+  padding: 114px 40px;
+  border: 1px solid #cccccc;
+  border-bottom: none;
+}
+
+.heading {
+  font-size: 40px;
+  font-weight: 500;
+  margin-top: 16px;
+}
+
+// ── Grid
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid #e0e0d8;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+// ── Card
+.card {
+  padding: 40px;
+  border-right: 1px solid #e0e0d8;
+  border-bottom: 1px solid #e0e0d8;
+  text-align: left;
+  background: $white;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s;
+  border-top: none;
+  border-left: none;
+
+  // Remove default button styles
+  outline: none;
+  font-family: $font-body;
+  color: $black;
+
+  &:hover,
+  &.active {
+    background: $black;
+    color: $white;
+
+    .cardTitle{
+      color:$white;
+    }
+    .cardDesc {
+      color: #aaa;
+    }
+
+    .icon {
+      filter: brightness(100);
+    }
+  }
+}
+
+.icon {
+  font-size: 1.4rem;
+  display: block;
+  margin-bottom: 12px;
+  line-height: 1;
+}
+
+.cardTitle {
+  font-family: $font-display;
+  color:$dark-gray;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.cardDesc {
+  font-size: 16px;
+  color: $mid-gray;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0;
+}

@@ -1,0 +1,26 @@
+// ─────────────────────────────────────────────
+// 1. YOUR VARIABLES FIRST (Bootstrap overrides live here)
+// ─────────────────────────────────────────────
+@import 'variables';
+
+// ─────────────────────────────────────────────
+// 2. BOOTSTRAP — exact order required for 5.3+
+// ─────────────────────────────────────────────
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/helpers";
+@import "bootstrap/scss/utilities/api";
+
+// ─────────────────────────────────────────────
+// 3. YOUR GLOBALS (after Bootstrap so you can override)
+// ─────────────────────────────────────────────
+@import 'mixins';
+@import 'global';

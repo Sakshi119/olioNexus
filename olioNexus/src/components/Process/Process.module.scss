@@ -1,0 +1,104 @@
+@import "../../assets/styles/mixins";
+@import "../../assets/styles/variables";
+
+.process {
+  @include section-pad;
+  background: $white;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.header {
+  text-align: center;
+  padding: 86px;
+  border-left: 1px solid #cccccc;
+  border-right: 1px solid #cccccc;
+}
+
+.heading {
+  font-size: 40px;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 56px;
+  margin-top: 16px;
+}
+
+.green {
+  color: $green;
+}
+
+// ── Grid
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid #ccc;
+  align-items: baseline;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+// ── Card
+.card {
+  display: flex;
+  text-align: left;
+  padding: 40px;
+  border-right: 1px solid #ccc;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.card:last-child {
+  border-right: none;
+}
+
+.num {
+  display: block;
+  font-family: $font-display;
+  font-size: 0.72rem;
+  color: $mid-gray;
+  letter-spacing: 0.15em;
+  margin-bottom: 16px;
+}
+
+.iconBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  color: $black;
+  transition: border-color 0.2s;
+
+  &:hover {
+    border-color: $green;
+  }
+}
+
+.cardTitle {
+  font-family: $font-display;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  color: $dark-gray;
+  text-align: left;
+  width: 100%;
+}
+
+.cardDesc {
+  font-size: 16px;
+  color: $mid-gray;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0;
+}

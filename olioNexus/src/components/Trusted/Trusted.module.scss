@@ -1,0 +1,36 @@
+@import "../../assets/styles/mixins";
+@import "../../assets/styles/variables";
+
+.trusted {
+  background: $white;
+  padding: 28px $section-padding-x;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+
+  @include tablet {
+    padding: 24px $section-padding-mob;
+  }
+}
+
+
+.label {
+  font-size: 16px;
+  letter-spacing: 0.15em;
+  color: $dark-gray;
+  text-align: center;
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+.logos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;  
+}
+
+.logo {
+  width: 90px;
+  height: 40px;
+  object-fit: contain;
+}

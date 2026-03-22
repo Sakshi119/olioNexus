@@ -1,0 +1,48 @@
+// ─────────────────────────────────────────────
+// COLORS
+// ─────────────────────────────────────────────
+$black:       #0a0a0a;
+$white:       #FEF9EF;
+$white1:    #949494;
+$green:       #088000;
+$orange:      #ff6b35;
+$blue:        #4a90d9;
+$purple:      #c84fd8;
+$red:         #e53935;
+$light-gray:  #f0efe8;
+$light-grey1: #FEFBF4;
+$mid-gray:    #6B6B6B;
+$dark-gray:   #212121;
+$gray1:       #3d3d3d;
+$footer-bg:   #080808;
+$border-subtle: rgba(0, 0, 0, 0.07);
+$border-dark:   #222222;
+
+// ─────────────────────────────────────────────
+// TYPOGRAPHY
+// ─────────────────────────────────────────────
+$font-display: 'Space Grotesk', sans-serif;   // headings, labels
+$font-body:    'Inter', sans-serif;            // body text, descriptions
+$font-mono:    'Space Mono', monospace;        // buttons
+// ─────────────────────────────────────────────
+// SPACING
+// ─────────────────────────────────────────────
+$section-padding-y:   100px;
+$section-padding-x:   80px;
+$section-padding-mob: 32px;
+
+// ─────────────────────────────────────────────
+// BOOTSTRAP OVERRIDES (must be before Bootstrap import)
+// ─────────────────────────────────────────────
+$primary:              $green;
+$body-bg:              $white;
+$body-color:           $black;
+$font-family-base:     $font-body;
+$grid-gutter-width:    32px;
+$container-max-widths: (
+  sm:  540px,
+  md:  720px,
+  lg:  960px,
+  xl:  1200px,
+  xxl: 1440px
+);

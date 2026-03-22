@@ -1,0 +1,180 @@
+@import "../../assets/styles/mixins";
+@import "../../assets/styles/variables";
+
+.solutions {
+  background: $black;
+  color: $white;
+  padding: 100px 80px 0 80px;
+  overflow: hidden;
+
+  @include tablet {
+    padding: 60px $section-padding-mob;
+  }
+}
+
+// ── Header
+.header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.tag {
+  @include section-tag;
+  color: $white;
+  display: inline-block;
+  padding: 4px 14px;
+  margin-bottom: 20px;
+  font-family: $font-mono;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 1.1;
+  color: $white;
+}
+
+.green {
+  color: $green;
+}
+
+// ── Service rows
+.serviceRow {
+  display: grid;
+  grid-template-columns: 59% 40%;
+  gap: 18px;
+  align-items: center;
+  padding: 10px 0;
+
+  @include tablet {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding: 40px 0;
+  }
+}
+
+.serviceRow:last-child {
+  padding-bottom: 0;
+}
+.serviceRow.reverse {
+  grid-template-columns: 40% 59% !important;
+}
+.reverse {
+  .blobWrap {
+    order: 1;
+  }
+  .serviceContent {
+    order: 2;
+  }
+
+  @include tablet {
+    .blobWrap {
+      order: 0;
+    }
+    .serviceContent {
+      order: 0;
+    }
+  }
+}
+
+// ── Blob
+.blobWrap {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  img {
+    width: 100%;
+  }
+}
+
+.blob {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+
+  &.blob_blue {
+    background: $blue;
+    box-shadow: 0 0 70px rgba($blue, 0.35);
+  }
+  &.blob_purple {
+    background: $purple;
+    box-shadow: 0 0 70px rgba($purple, 0.35);
+  }
+  &.blob_red {
+    background: $red;
+    box-shadow: 0 0 70px rgba($red, 0.35);
+  }
+}
+
+// ── Service content
+.serviceContent {
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+  border: 1px solid #333333;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+
+  @include tablet {
+    max-width: 100%;
+  }
+}
+
+.serviceName {
+  font-size: 1.5625rem;
+  font-weight: 500;
+  margin-bottom: 12px;
+  color: $white;
+}
+
+.serviceDesc {
+  color: $white1;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.75;
+  margin-bottom: 24px;
+  max-width: 520px;
+}
+
+.tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+  max-width: 520px;
+}
+
+.tag2 {
+  font-size: 14px;
+  color: $white1;
+  font-weight: 500;
+  border: 1px dashed $gray1;
+  padding: 5px 13px;
+  letter-spacing: 0.04em;
+}
+
+.learnBtn {
+  background: transparent;
+  color: $white;
+  border-bottom: 1px solid $white;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  padding-bottom: 4px;
+  font-family: $font-mono;
+  font-weight: 400;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    border-color: $green;
+    color: $green;
+  }
+}

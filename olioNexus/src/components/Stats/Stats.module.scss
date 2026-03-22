@@ -1,0 +1,61 @@
+@import "../../assets/styles/mixins";
+@import "../../assets/styles/variables";
+
+.stats {
+  @include section-pad;
+  background: $white;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #ccc;
+  border-top: 0;
+}
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 40px;
+  width: 100%;
+  border-right: 1px solid #ccc;
+  text-align: center;
+
+  &:last-child {
+    border-right: none;
+  }
+
+  // On tablet, reset right border for 2-col layout
+  @include tablet {
+    &:nth-child(2) {
+      border-right: none;
+    }
+    &:nth-child(3) {
+      border-right: 1px solid #1a1a1a;
+    }
+    border-bottom: 1px solid #1a1a1a;
+    &:nth-child(3),
+    &:nth-child(4) {
+      border-bottom: none;
+    }
+  }
+}
+
+.num {
+  font-family: $font-display;
+  font-size: 48px;
+  font-weight: 500;
+  color: $dark-gray;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.label {
+  font-family: $font-body;
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: $mid-gray;
+}

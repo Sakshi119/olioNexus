@@ -1,0 +1,128 @@
+
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/variables';
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: $white;
+  border-bottom: 1px solid $border-subtle;
+  transition: box-shadow 0.3s ease;
+}
+
+.scrolled {
+  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.08);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px $section-padding-x;
+
+  @include tablet {
+    padding: 20px $section-padding-mob;
+  }
+}
+
+// ── Logo
+.logo {
+  @include display-font(1.2rem, 800);
+  color: $black;
+  letter-spacing: -0.5px;
+  text-decoration: none;
+
+  span {
+    color: $green;
+  }
+}
+
+// ── Desktop links
+.links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @include tablet {
+    display: none;
+  }
+
+  a {
+    font-size: 1rem;
+    font-weight: 500;
+    color: $dark-gray;
+    text-decoration: none;
+    transition: color 0.2s;
+
+    &:hover {
+      color: $green;
+    }
+  }
+}
+
+// ── CTA button
+.ctaBtn {
+  @include btn-base;
+  background: $green;
+  color: $light-grey1;
+  padding: 10px 20px;
+  text-decoration: none;
+
+  @include tablet {
+    display: none;
+  }
+}
+
+// ── Hamburger
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+
+  span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: $black;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+
+  @include tablet {
+    display: flex;
+  }
+}
+
+// ── Mobile menu
+.mobileMenu {
+  display: flex;
+  flex-direction: column;
+  padding: 20px $section-padding-mob 28px;
+  gap: 20px;
+  border-top: 1px solid $border-subtle;
+  background: $white;
+
+  a {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: $dark-gray;
+    text-decoration: none;
+
+    &:hover {
+      color: $green;
+    }
+  }
+
+  .ctaBtn {
+    display: inline-flex;
+    align-self: flex-start;
+    margin-top: 8px;
+  }
+}
