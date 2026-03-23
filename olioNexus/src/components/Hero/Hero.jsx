@@ -72,7 +72,7 @@ export default function Hero() {
                 style={{ '--delay': '0.36s' }}
               >
                 <a href="#contact" className="btn-green">
-                  Start a Conversation →
+                  Start a Conversation
                 </a>
                 <a href="#solutions" className="btn-outline-dark">
                   See Our Work
