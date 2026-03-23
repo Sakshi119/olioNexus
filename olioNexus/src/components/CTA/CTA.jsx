@@ -4,7 +4,6 @@ export default function CTA() {
 
     return (
         <section className={styles.cta} id="contact">
-            {/* Left: copy */}
             <div className={styles.left}>
                 <h2 className={styles.heading}>
                     We&apos;re not here to disrupt everything.
