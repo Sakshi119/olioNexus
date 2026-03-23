@@ -84,6 +84,8 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  width: 100%;
+  padding: 0;
   img {
     width: 100%;
   }
@@ -176,5 +178,61 @@
   &:hover {
     border-color: $green;
     color: $green;
+  }
+}
+
+.serviceContent {
+  transition: all 0.4s ease;
+  position: relative;
+
+  &:hover {
+    transform: translateY(-8px);
+    border-color: $green;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.serviceImage {
+  transition: transform 0.6s ease;
+
+  &:hover {
+    transform: scale(1.05) rotate(1deg);
+  }
+}
+
+.tag2 {
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: $green;
+    color: $green;
+    transform: translateY(-2px);
+  }
+}
+
+.learnBtn {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 1px;
+    background: $green;
+    transition: width 0.3s ease;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+.serviceRow {
+  opacity: 0.95;
+
+  &:hover {
+    opacity: 1;
   }
 }

@@ -3,15 +3,11 @@
 
 .trusted {
   background: $white;
-  padding: 28px $section-padding-x;
+  padding: 28px 0;
   border-top: 1px solid rgba(0, 0, 0, 0.06);
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-
-  @include tablet {
-    padding: 24px $section-padding-mob;
-  }
+  overflow: hidden;
 }
-
 
 .label {
   font-size: 16px;
@@ -20,17 +16,79 @@
   text-align: center;
   margin-bottom: 24px;
   font-weight: 500;
+  padding: 0 $section-padding-x;
+
+  @include tablet {
+    padding: 0 $section-padding-mob;
+  }
 }
 
-.logos {
+// ── Outer mask — fades edges for a clean entry/exit
+.marqueeWrapper {
+  position: relative;
+  overflow: hidden;
+
+  // soft fade on left and right edges
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 120px;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  &::before {
+    left: 0;
+    background: linear-gradient(to right, $white, transparent);
+  }
+
+  &::after {
+    right: 0;
+    background: linear-gradient(to left, $white, transparent);
+  }
+}
+
+// ── The moving track
+.marqueeTrack {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;  
+  width: max-content;
+  animation: marquee 28s linear infinite;
+
+  // pause on hover
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); } // -50% because we doubled the logos
+}
+
+// ── Individual logo slot
+.logoWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 40px;
+  flex-shrink: 0;
 }
 
 .logo {
   width: 90px;
   height: 40px;
   object-fit: contain;
+  opacity: 0.5;
+  filter: grayscale(40%);
+  transition: opacity 0.25s ease, filter 0.25s ease, transform 0.25s ease;
+
+  &:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+    transform: scale(1.08);
+  }
 }
