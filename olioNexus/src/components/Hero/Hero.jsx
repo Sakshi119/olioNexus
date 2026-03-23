@@ -1,5 +1,5 @@
 import styles from './Hero.module.scss';
-import heroImg from '../../assets/images/heroimg.png' // Ensure you have an image at this path
+import heroImg from '../../assets/images/heroimg.png' 
 export default function Hero() {
   return (
     <section className={styles.hero}>
