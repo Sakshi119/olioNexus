@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react';
 import styles from './Hero.module.scss';
-import heroImg from '../../assets/images/heroimg.png';
-
+import heroImg from '../../assets/images/heroimg.png' // Ensure you have an image at this path
 export default function Hero() {
   const contentRef = useRef(null);
   const imageRef   = useRef(null);

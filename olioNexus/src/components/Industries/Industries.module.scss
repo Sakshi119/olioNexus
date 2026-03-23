@@ -43,32 +43,69 @@
   text-align: left;
   background: $white;
   cursor: pointer;
-  transition:
-    background 0.2s,
-    color 0.2s;
   border-top: none;
   border-left: none;
 
-  // Remove default button styles
+ 
   outline: none;
   font-family: $font-body;
   color: $black;
+
+ 
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.35s ease,
+    color 0.3s ease,
+    box-shadow 0.35s ease;
+
+  position: relative;
+  overflow: hidden;
+
+  
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at top left,
+      rgba($green, 0.15),
+      transparent 60%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+  }
 
   &:hover,
   &.active {
     background: $black;
     color: $white;
 
-    .cardTitle{
-      color:$white;
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+
+    &::before {
+      opacity: 1;
     }
+
+    .cardTitle {
+      color: $white;
+      transform: translateY(-2px);
+    }
+
     .cardDesc {
       color: #aaa;
+      opacity: 0.9;
     }
 
     .icon {
       filter: brightness(100);
+      transform: scale(1.08) rotate(2deg);
     }
+  }
+
+  &:active {
+    transform: scale(0.97);
   }
 }
 
@@ -81,7 +118,7 @@
 
 .cardTitle {
   font-family: $font-display;
-  color:$dark-gray;
+  color: $dark-gray;
   font-size: 24px;
   font-weight: 500;
   margin-bottom: 8px;

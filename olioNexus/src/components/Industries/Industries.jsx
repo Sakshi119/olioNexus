@@ -7,7 +7,7 @@ export default function Industries() {
 
   return (
     <section className={styles.industries} id="industries">
-      <div className={styles.headerRow}>
+      <div className={styles.headerRow} data-aos="fade-up">
         <span className="section-tag">&#91;Industries&#93;</span>
         <h2 className={styles.heading}>Industries we serve</h2>
       </div>
@@ -15,7 +15,7 @@ export default function Industries() {
       <div className={styles.grid}>
         {industries.map((ind, i) => (
           <button
-            key={ind.name}
+            key={ind.name} data-aos="fade-up" data-aos-delay={i * 80}
             className={`${styles.card} ${active === i ? styles.active : ''}`}
             onClick={() => setActive(i)}
           >
